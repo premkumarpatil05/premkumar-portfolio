@@ -1,11 +1,7 @@
+import Hero from "./components/Hero/Hero";
+
 function App() {
-  return (
-    <div className="min-h-screen bg-black flex items-center justify-center">
-      <h1 className="text-6xl font-bold text-white">
-        🚀 Welcome Premkumar
-      </h1>
-    </div>
-  );
+  return <Hero />;
 }
 
 export default App;
