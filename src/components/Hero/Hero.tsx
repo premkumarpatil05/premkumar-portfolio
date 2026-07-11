@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import HeroText from "./HeroText";
 import HeroVisual from "./HeroVisual";
 
@@ -14,22 +15,33 @@ export default function Hero() {
       <div className="relative z-10 max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
 
         {/* Left Side */}
-        <div className="text-center lg:text-left">
+        <motion.div
+          initial={{ opacity: 0, y: 60 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-center lg:text-left"
+        >
           <HeroText />
 
           <div className="mt-10 flex gap-5 flex-wrap justify-center lg:justify-start">
-            <button className="px-7 py-3 rounded-xl bg-blue-600 hover:bg-blue-500 duration-300 shadow-lg shadow-blue-500/30">
+            <button className="px-7 py-3 rounded-xl bg-blue-600 text-white shadow-lg shadow-blue-500/30 transition-all duration-300 hover:scale-105 hover:bg-blue-500">
               View Projects
             </button>
 
-            <button className="px-7 py-3 rounded-xl border border-gray-400 hover:bg-white hover:text-black duration-300">
+            <button className="px-7 py-3 rounded-xl border border-gray-400 text-white transition-all duration-300 hover:bg-white hover:text-black hover:scale-105">
               Download Resume
             </button>
           </div>
-        </div>
+        </motion.div>
 
         {/* Right Side */}
-        <HeroVisual />
+        <motion.div
+          initial={{ opacity: 0, x: 80 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1 }}
+        >
+          <HeroVisual />
+        </motion.div>
 
       </div>
 
